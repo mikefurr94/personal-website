@@ -8,7 +8,7 @@ import CaseStudyCard from "./CaseStudyCard";
 
 export default function CaseStudies() {
   return (
-    <SectionWrapper id="case-studies">
+    <SectionWrapper id="case-studies" className="bg-surface-sunken">
       <h2 className="mb-4 text-3xl font-semibold tracking-tight text-primary md:text-4xl">
         Case Studies
       </h2>

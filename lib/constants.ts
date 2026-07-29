@@ -7,15 +7,6 @@ export interface Experience {
   tags: string[];
 }
 
-export interface Project {
-  title: string;
-  company: string;
-  summary: string;
-  details: string;
-  outcomes: string[];
-  tags: string[];
-}
-
 export interface Education {
   school: string;
   degree: string;
@@ -41,7 +32,6 @@ export interface NavItem {
 export const navItems: NavItem[] = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
   { label: "Case Studies", href: "#case-studies" },
   { label: "Education", href: "#education" },
 ];
@@ -126,54 +116,6 @@ export const experiences: Experience[] = [
       "Contributed to market operations and presented business solutions to asset management across the branch",
     ],
     tags: ["Finance", "Operations"],
-  },
-];
-
-export const projects: Project[] = [
-  {
-    title: "AI-Powered Wound Imaging Platform",
-    company: "Net Health | Tissue Analytics",
-    summary:
-      "Built vision and roadmap for an AI imaging product that automatically tracks healing progress of chronic wounds across web and mobile apps, integrated with all major EHRs.",
-    details:
-      "Led a team of 10+ engineers to build first-to-market imaging features across web and iOS/Android apps. The platform uses computer vision to automatically measure and track wound healing over time, feeding data directly into clinicians' EHR workflows through HL7 and FHIR integrations with Epic, Cerner, Allscripts, Athena, and Meditech.",
-    outcomes: [
-      "30-40% year-over-year revenue growth",
-      "5,000+ active clinical users",
-      "Integrations with 6+ major EHR systems",
-      "First-to-market AI imaging features on mobile",
-    ],
-    tags: ["AI/ML", "Computer Vision", "EHR Integration", "Mobile", "Web"],
-  },
-  {
-    title: "Value-Based Wound Care Platform",
-    company: "Tissue Health Plus",
-    summary:
-      "Led 0-1 development of an AI startup designing value-based care programs with clinical guidance and personalized care plans for high-risk patients.",
-    details:
-      "Built a comprehensive platform from scratch serving wound care clinics and home health organizations. The system generates clinical guidance and personalized care plans using AI, with a full-stack architecture spanning Go backend, Flutter/Dart mobile apps, and Snowflake data infrastructure. Integrated with healthcare platforms like Redox for seamless data exchange.",
-    outcomes: [
-      "Launched mobile and web applications from zero",
-      "Served clinicians across wound care and home health",
-      "End-to-end UX from user research to high-fidelity prototypes",
-      "Full-stack platform with Go, Flutter, and Snowflake",
-    ],
-    tags: ["0→1", "Go", "Flutter", "Snowflake", "FHIR", "Value-Based Care"],
-  },
-  {
-    title: "Enterprise Data & AI Platform",
-    company: "Radicle Health",
-    summary:
-      "Building data engineering pipelines and AI tooling across a multi-product healthcare platform, including ambient AI and AI-powered note generation for clinicians.",
-    details:
-      "Leading product strategy for the Data & AI team, creating Snowflake-powered data pipelines that offer analytics services and BI capabilities across the product portfolio. Driving development of AI-powered clinical tools including ambient AI for real-time clinical documentation and intelligent note generation to reduce clinician burden.",
-    outcomes: [
-      "Cross-product AI tooling strategy",
-      "Snowflake data pipeline architecture",
-      "Ambient AI for clinical documentation",
-      "BI capabilities across product portfolio",
-    ],
-    tags: ["Snowflake", "AI/ML", "Ambient AI", "Data Pipelines", "BI"],
   },
 ];
 
