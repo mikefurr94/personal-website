@@ -199,6 +199,27 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
   {
+    title: "Batch transcription pipeline for ambient AI notes",
+    company: "Radicle Health",
+    role: "Technical Product Manager",
+    problem:
+      "Our ambient AI pipeline relied on Azure Speech to Text for live transcription — it was expensive to run at scale and its error rates weren't consistently low enough across English and Spanish to responsibly launch AI-generated clinical notes to customers.",
+    task: "Re-architect the transcription pipeline to be cheaper and more accurate, then prove the resulting notes were good enough to launch across PCP, Psych, and CM note types.",
+    outcome: [
+      "Moved the pipeline off Azure Speech to Text live transcription to GPT-4o transcribe with batch processing, cutting transcription costs by more than 50%",
+      "Drove error rates for both English and Spanish transcriptions down to under 10%",
+      "Used Claude Code to analyze the existing AI pipeline's codebase and pinpoint exactly where accuracy and performance were breaking down",
+      "Built an internal AI-powered evaluation tool, using Claude Code, to score note quality across PCP, Psych, and CM notes",
+      "Brought cost and quality to a bar that put the ambient AI product in a position to launch to customers",
+    ],
+    skills: [
+      "AI pipeline architecture",
+      "Vendor/model migration",
+      "Internal tooling with Claude Code",
+      "Quality evaluation frameworks",
+    ],
+  },
+  {
     title: "User guidance for AI measurement calibration",
     company: "Net Health | Tissue Analytics",
     role: "Product Manager",
