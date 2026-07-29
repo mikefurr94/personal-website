@@ -19,7 +19,11 @@ export default function Experience() {
         viewport={{ once: true, amount: 0.05 }}
       >
         {experiences.map((exp, i) => (
-          <TimelineItem key={exp.company} experience={exp} index={i} />
+          <TimelineItem
+            key={exp.company}
+            experience={exp}
+            isLast={i === experiences.length - 1}
+          />
         ))}
       </motion.div>
     </SectionWrapper>
