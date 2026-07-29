@@ -23,6 +23,16 @@ export interface Education {
   highlights: string[];
 }
 
+export interface CaseStudy {
+  title: string;
+  company: string;
+  role: string;
+  problem: string;
+  task: string;
+  outcome: string[];
+  skills: string[];
+}
+
 export interface NavItem {
   label: string;
   href: string;
@@ -32,6 +42,7 @@ export const navItems: NavItem[] = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Case Studies", href: "#case-studies" },
   { label: "Education", href: "#education" },
 ];
 
@@ -163,6 +174,107 @@ export const projects: Project[] = [
       "BI capabilities across product portfolio",
     ],
     tags: ["Snowflake", "AI/ML", "Ambient AI", "Data Pipelines", "BI"],
+  },
+];
+
+export const caseStudies: CaseStudy[] = [
+  {
+    title: "Parallel imaging pipeline for AI wound analysis",
+    company: "Net Health | Tissue Analytics",
+    role: "Product Manager",
+    problem:
+      "When our biggest customer came on board, the imaging pipeline choked at peak periods — results were taking 20–30 seconds to return, right in the middle of the customer's 9–10am EST peak usage window.",
+    task: "Keep the customer relationship intact while diagnosing and fixing the root cause — meant being upfront that we'd need to push the go-live date, and figuring out why the system couldn't handle the load.",
+    outcome: [
+      "Worked with cloud engineers and data science to diagnose the bottleneck, scaled up capacity as a stopgap, then re-architected the imaging queue with parallel threading to handle concentrated peak-hour demand",
+      "Stayed transparent with the customer about the setback and pushed go-live back one week to properly load test",
+      "Cut measurement time from 20–30 seconds down to 2–3 seconds, even during peak periods",
+      "Go-live succeeded and usage grew steadily month-over-month afterward, preserving the account relationship",
+    ],
+    skills: [
+      "Technical troubleshooting",
+      "Executive communication",
+      "Scope negotiation",
+      "Load testing strategy",
+    ],
+  },
+  {
+    title: "User guidance for AI measurement calibration",
+    company: "Net Health | Tissue Analytics",
+    role: "Product Manager",
+    problem:
+      "The implementations team flagged a pattern: images were being submitted without a required calibration marker, which meant the measurement model had nothing to anchor to. No calibration marker meant no measurement — and customers were reporting that \"the product wasn't working,\" with no visibility into why.",
+    task: "Determine how widespread the problem was, understand the root cause, and find a way to prevent it going forward.",
+    outcome: [
+      "Quantified the issue (5–10% of submitted images were missing a marker — bigger than anyone realized), and traced the root cause to new or undertrained nursing staff amid high inpatient turnover",
+      "Partnered with data science to ship a lightweight, on-device computer vision model that detects whether a calibration marker is present before a user can submit an image",
+      "Meaningfully reduced marker-less submissions and lifted NPS scores that had been dragged down by measurement-accuracy complaints",
+      "Became a standout feature in sales demos for inpatient wound care teams and led to a follow-on on-device angle-detection feature",
+    ],
+    skills: [
+      "Root-cause analysis",
+      "Cross-functional diagnosis",
+      "0→1 ML feature scoping",
+      "Support-to-product translation",
+    ],
+  },
+  {
+    title: "Circumferential wound imaging model",
+    company: "Net Health | Tissue Analytics",
+    role: "Product Manager",
+    problem:
+      "Wounds often didn't fit within a single static image, and there was no reliable way to consistently track them over time or determine which interventions were working. Undocumented healing gaps risked CMS penalties, documentation was slow and manual for clinicians, the process was long and uncomfortable for patients, and both inpatient and outpatient wound care teams had flagged this as a clear product gap.",
+    task: "Build a way to measure wounds accurately, consistently, quickly, and to a clinical quality bar — good enough to go directly into a patient's chart.",
+    outcome: [
+      "Phased the AI build to de-risk it: validated on-site video capture against an 80%+ accuracy threshold, added in-app guidance and re-tested, then shipped live guidance powered by a local on-device model",
+      "Clinicians confirmed output quality was sufficient to enter directly into the patient's chart, cutting documentation time from ~20 minutes to ~8 minutes with a 48.5% lower error rate than manual measurement",
+      "Patients reported a noticeably more comfortable experience",
+      "Directly helped close the company's biggest outpatient wound care enterprise deal, helping hit the bookings goal",
+    ],
+    skills: [
+      "Multi-stakeholder problem framing",
+      "Phased AI product development",
+      "On-device ML deployment",
+      "Tying product quality to revenue outcomes",
+    ],
+  },
+  {
+    title: "Assistive medical device for COPD patients",
+    company: "RightAir (Penn-affiliated startup)",
+    role: "R&D Engineer, Data Analytics",
+    problem:
+      "COPD patients need real-time support to manage their breathing, but there was no lightweight, wearable way to detect and respond to individual breathing patterns.",
+    task: "Design, test, and implement assistive technology — a wearable vest — that could detect a patient's breathing pattern and adapt in real time to help them breathe more easily.",
+    outcome: [
+      "Developed and deployed a per-user machine learning model (TensorFlow, Python) on a Google Coral microprocessor to detect breathing patterns from sensor input, rather than applying a one-size-fits-all model",
+      "Worked across hardware and software — PCB design in EAGLE, Fusion 360 modeling, and C++ — to get a working prototype end to end, and contributed to VC pitch storyboarding",
+      "Delivered a working, personalized on-device prototype that became the foundation for a Master's thesis on ML-based breathing pattern detection in assistive technology",
+    ],
+    skills: [
+      "Applied ML on constrained edge hardware",
+      "Hardware/software integration",
+      "Early-stage prototyping",
+      "Investor storytelling",
+    ],
+  },
+  {
+    title: "AI generated Care Plan for value-based care investment",
+    company: "Tissue Health Plus",
+    role: "Senior Product Manager",
+    problem:
+      "As an early-stage, 0→1 startup, Tissue Health Plus needed to prove to value-based care investors that it could deliver more than imaging and measurement — it needed to show it could actually drive clinical decision-making and care coordination for high-risk patients.",
+    task: "Build an AI-based care plan engine that could take a patient's risk level and translate it into a concrete plan: selecting the right clinician, scheduling the right visits, and generating the right interventions — automatically and consistently, credible enough to advance investor conversations.",
+    outcome: [
+      "Defined the product requirements and led design of the AI logic mapping risk stratification to clinician selection and visit cadence, then built the capability end-to-end with backend, frontend, and data engineering",
+      "Positioned it as core to the company's value-based care story, not just a feature — packaged it for investor-facing conversations and demos",
+      "Generated meaningful investor interest by proving the company could build clinically credible AI, not just imaging tools — strengthening the investment narrative at an early, pivotal stage",
+    ],
+    skills: [
+      "0→1 AI product development",
+      "Clinical risk modeling → product logic",
+      "Investor-facing storytelling",
+      "Cross-functional startup execution",
+    ],
   },
 ];
 
